@@ -1,3 +1,6 @@
+type setString = React.Dispatch<React.SetStateAction<string>>
+type setStringArray = React.Dispatch<React.SetStateAction<string[]>>
+
 type Props = {
     listing: {
         id: number;
@@ -13,9 +16,13 @@ type Props = {
         location: string;
         languages: string[];
         tools: string[];
-    }
+    },
+    setRoleFilter: setString,
+    setLevelFilter: setString,
+    setLanguageFilter: setStringArray,
+    setToolFilter: setStringArray,
 }
-function Listing({ listing }: Props) {
+function Listing({ listing, setRoleFilter, setLevelFilter, setLanguageFilter, setToolFilter }: Props) {
     return (
         <article className="bg-white shadow-xl flex flex-col relative rounded-lg">
             <img src={listing.logo} alt="PhotoSnap" className="w-16 h-16 absolute -top-8 left-[26px]" />
@@ -50,15 +57,42 @@ function Listing({ listing }: Props) {
                 <hr className='border-darkCyan' />
 
                 <div className="flex flex-wrap gap-4">
-                    <span className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'>{listing.role}</span>
-                    <span className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'>{listing.level}</span>
+                    <button
+                        type="button"
+                        className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'
+                        onClick={() => setRoleFilter(listing.role)}
+                    >
+                        {listing.role}
+                    </button>
+
+                    <button
+                        type="button"
+                        className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'
+                        onClick={() => setLevelFilter(listing.level)}
+                    >
+                        {listing.level}
+                    </button>
 
                     {listing.languages.map(language => (
-                        <span key={`${listing.id}${language}`} className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'>{language}</span>
+                        <button
+                            key={`${listing.id}${language}`}
+                            type="button"
+                            className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'
+                            onClick={() => setLanguageFilter(prev => [...prev, language])}
+                        >
+                            {language}
+                        </button>
                     ))}
 
                     {listing.tools.map(tool => (
-                        <span key={`${listing.id}${tool}`} className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'>{tool}</span>
+                        <button
+                            key={`${listing.id}${tool}`}
+                            type="button"
+                            className='bg-lightCyanFilter text-desatDarkCyan pt-2 pb-1.5 px-3 rounded font-bold'
+                            onClick={() => setToolFilter(prev => [...prev, tool])}
+                        >
+                            {tool}
+                        </button>
                     ))}
                 </div>
             </div>
