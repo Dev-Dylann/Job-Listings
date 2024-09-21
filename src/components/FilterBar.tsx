@@ -41,39 +41,39 @@ function FilterBar({ roleFilter, levelFilter, languageFilter, toolFilter, setRol
     }
 
     return (
-        <section className='bg-white rounded-lg shadow-xl p-5 -mt-24 flex justify-between items-center '>
+        <section className='bg-white rounded-lg shadow-xl p-5 -mt-24 flex justify-between items-center md:px-8 md:-mt-28 md:text-lg'>
             <div className='flex flex-wrap gap-4 grow'>
                 {roleFilter && (
                     <div className='font-bold flex rounded overflow-hidden'>
                         <span className="px-3 pb-1.5 pt-2 bg-lightCyanFilter text-desatDarkCyan">{roleFilter}</span>
-                        <button onClick={() => setRoleFilter('')} className='bg-desatDarkCyan text-white px-3'><img src={removeIcon} alt={`Remove ${roleFilter} filter`} /></button>
+                        <button onClick={() => setRoleFilter('')} className='bg-desatDarkCyan text-white px-3 hover:bg-darkerCyan transition-all'><img src={removeIcon} alt={`Remove ${roleFilter} filter`} /></button>
                     </div>
                 )}
 
                 {levelFilter && (
                     <div className='font-bold flex rounded overflow-hidden'>
                         <span className="px-3 pb-1.5 pt-2 bg-lightCyanFilter text-desatDarkCyan">{levelFilter}</span>
-                        <button onClick={() => setLevelFilter('')} className='bg-desatDarkCyan text-white px-3'><img src={removeIcon} alt={`Remove ${levelFilter} filter`} /></button>
+                        <button onClick={() => setLevelFilter('')} className='bg-desatDarkCyan text-white px-3 hover:bg-darkerCyan transition-all'><img src={removeIcon} alt={`Remove ${levelFilter} filter`} /></button>
                     </div>
                 )}
 
                 {languageFilter.map(language => (
                     <div key={language} className='font-bold flex rounded overflow-hidden'>
                         <span className="px-3 pb-1.5 pt-2 bg-lightCyanFilter text-desatDarkCyan">{language}</span>
-                        <button onClick={() => removeLanguage(language)} className='bg-desatDarkCyan text-white px-3'><img src={removeIcon} alt={`Remove ${language} filter`} /></button>
+                        <button onClick={() => removeLanguage(language)} className='bg-desatDarkCyan text-white px-3 hover:bg-darkerCyan transition-all'><img src={removeIcon} alt={`Remove ${language} filter`} /></button>
                     </div>
                 ))}
 
                 {toolFilter.map(tool => (
                     <div key={tool} className='font-bold flex rounded overflow-hidden'>
                         <span className="px-3 pb-1.5 pt-2 bg-lightCyanFilter text-desatDarkCyan">{tool}</span>
-                        <button onClick={() => removeTool(tool)} className='bg-desatDarkCyan text-white px-3'><img src={removeIcon} alt={`Remove ${tool} filter`} /></button>
+                        <button onClick={() => removeTool(tool)} className='bg-desatDarkCyan text-white px-3 hover:bg-darkerCyan transition-all'><img src={removeIcon} alt={`Remove ${tool} filter`} /></button>
                     </div>
                 ))}
 
             </div>
 
-            <button onClick={clearAllFilters} className='text-darkCyan font-bold px-2'>Clear</button>
+            <button onClick={clearAllFilters} className='text-darkCyan font-bold px-2 hover:text-desatDarkCyan hover:underline transition-all'>Clear</button>
         </section>
     )
 }

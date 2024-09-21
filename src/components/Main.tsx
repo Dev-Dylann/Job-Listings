@@ -63,7 +63,7 @@ function Main() {
     }, [roleFilter, levelFilter, languageFilter, toolFilter])
 
     return (
-        <main className="grow bg-lightCyanBg font-spartan px-5 py-16 flex flex-col gap-16 relative">
+        <main className="grow bg-lightCyanBg font-spartan px-5 py-16 flex flex-col gap-16 relative md:px-8 md:py-20 lg:px-10 lg:gap-6 xl:px-36">
             {/* Filter chamber lol... */}
             {(roleFilter !== '' || levelFilter !== '' || languageFilter.length > 0 || toolFilter.length > 0) && (
                 <FilterBar roleFilter={roleFilter} levelFilter={levelFilter} languageFilter={languageFilter} toolFilter={toolFilter} setRoleFilter={setRoleFilter} setLevelFilter={setLevelFilter} setLanguageFilter={setLanguageFilter} setToolFilter={setToolFilter} />
