@@ -11,10 +11,7 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -28,7 +25,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot 1](/public/listings1.jpg)
+![Screenshot 2](/public/listings2.jpg)
 
 ### Links
 
@@ -40,24 +38,21 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Tailwind CSS](https://tailwindcss.com/) - CSS library
+- [Vite](https://vitejs.dev) + [React](https://reactjs.org/)
+- [Google Fonts](https://fonts.google.com/)
 
 ### What I Learned
 
+During the course of this challenge, I learnt to use the `array.some()` and `array.includes()` methods to check for overlapping values in two arrays.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+array1.some(value => array2.includes(value))
+// returns true or false if there's at least one overlapping value
 ```
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Dev-Dylann](https://www.frontendmentor.io/profile/Dev-Dylann)
+- Twitter - [@dev_dylann](https://www.twitter.com/dev_dylann)
